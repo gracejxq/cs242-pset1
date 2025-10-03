@@ -31,15 +31,18 @@ def _3  = succ _2;
 ##########
 # TASK: Implement the following functions.
 
+# HELPER FUNCTION FOR is_zero
+def make_false = (c2 (c2 I ff) ff);
+
 # BEGIN_YOUR_CODE
-def or     = I;
-def and    = I;
-def not    = I;
-def is_odd = I;
-def is_zero = I;
-def pred_helper = I;
-def pred = I;
-def ii = I;
+def or          = c2 (c1 c1 (c2 I tt)) I;
+def and         = c2 (c1 c2 (c2 (c1 c1 I) I)) ff;
+def not         = c2 (c2 I ff) tt;
+def is_odd      = c2 (c2 I not) ff;
+def is_zero     = c2 (c2 I make_false) tt;
+def pred_helper = S (c1 pair (c2 I second)) (c1 succ (c2 I second));
+def pred        = c2 (c2 (c2 I pred_helper) (pair _0 _0)) first;
+def ii          = S K K;
 # END_YOUR_CODE
 
 #########
